@@ -1,0 +1,17 @@
+{% extends 'TaskPostsBundle:Default:layout.html.twig' %}
+{% block title %}Retrieve posts{% endblock title %}
+
+{% block body %}
+    
+  {% for post in posts %} 
+      <div class="panel {{ cycle(['panel-success', 'panel-info'], loop.index0)}}">
+        <div class="panel-heading">{{ post.title }} {{ label_success( post.categoryID.name ) }} {{ label_info(post.publishDate|date('Y-m-d')) }}</div>
+        <div class="panel-body">{{ post.content }}</div>
+     </div>
+      
+  {% endfor %}
+    
+
+
+{% endblock body %}
+    

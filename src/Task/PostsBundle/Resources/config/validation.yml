@@ -1,0 +1,10 @@
+Task\PostsBundle\Entity\posts:
+    properties:
+        title:
+            - NotBlank: ~
+        content:
+            - NotBlank: ~
+        categoryID:
+            - NotBlank: ~
+        publishDate:
+            - NotBlank: ~

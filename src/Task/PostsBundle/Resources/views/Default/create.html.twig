@@ -1,0 +1,28 @@
+{% extends 'TaskPostsBundle:Default:layout.html.twig' %}
+{% block title %}Create Post{% endblock title %}
+
+{% block body %}
+    <div class="panel panel-primary">
+        <div class="panel-heading">Create post</div>
+        <div class="panel-body">
+            {{ form_start(form) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.content) }}
+                {{ form_row(form.categoryID) }}    
+        
+                <div class="form-group {% if form.publishDate.vars.errors|length > 0 %}has-error{% endif %} ">
+                    <label for="form_publishDate" class="control-label required">Date Picking</label>
+                    <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="form_publishDate" data-link-format="yyyy-mm-dd">
+                        {{ form_widget(form.publishDate) }}
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                        {{ form_errors(form.publishDate) }}
+                    <input type="hidden" id="form_publishDate" value="" /><br/>
+                </div>
+        
+                {{ form_row(form.save) }}    
+             {{ form_end(form) }}
+            
+        </div>
+     </div>
+{% endblock body %}
